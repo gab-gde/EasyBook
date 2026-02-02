@@ -10,7 +10,11 @@ export const authService = {
     if (!admin || !(await bcrypt.compare(password, admin.passwordHash))) {
       throw new AppError('Email ou mot de passe incorrect', 401);
     }
-    const token = jwt.sign({ adminId: admin.id, email: admin.email }, config.jwt.secret, { expiresIn: config.jwt.expiresIn });
+    const token = jwt.sign(
+      { adminId: admin.id, email: admin.email },
+      config.jwt.secret as jwt.Secret,
+      { expiresIn: 604800 }
+    );
     return { token, admin: { id: admin.id, email: admin.email, createdAt: admin.createdAt, updatedAt: admin.updatedAt } };
   },
   async getAdminById(id: string) {
