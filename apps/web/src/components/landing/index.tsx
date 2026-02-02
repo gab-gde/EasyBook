@@ -333,7 +333,9 @@ export function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-slate-400 text-sm">© {new Date().getFullYear()} BookEasy. Tous droits réservés.</p>
-          <p className="text-slate-400 text-sm flex items-center gap-1">Fait avec <Heart className="w-4 h-4 text-red-500 fill-red-500" /> en France</p>
+          <p className="text-slate-400 text-sm flex items-center gap-1">
+            Créé par <span className="text-white font-semibold ml-1">Gabin Goude</span>
+          </p>
         </div>
       </div>
     </footer>
